@@ -89,24 +89,6 @@ class RoadUtil:
                         meeples[i].append(meeple_position)
 
         return meeples
-
-    # @classmethod
-    # def find_roads(cls, game_state: CarcassonneGameState, coordinate: Coordinate):
-    #     roads: Set[Road] = set()
-
-    #     tile: Tile = game_state.board[coordinate.row][coordinate.column]
-
-    #     if tile is None:
-    #         return roads
-
-    #     side: Side
-    #     for side in [Side.TOP, Side.RIGHT, Side.BOTTOM, Side.LEFT]:
-    #         if tile.get_type(side) == TerrainType.ROAD:
-    #             road: Road = cls.find_road(game_state=game_state,
-    #                                         road_position=CoordinateWithSide(coordinate=coordinate, side=side))
-    #             roads.add(road)
-
-    #     return list(roads)
     
     @classmethod
     def find_roads(cls, game_state: CarcassonneGameState, coordinate: Coordinate):
