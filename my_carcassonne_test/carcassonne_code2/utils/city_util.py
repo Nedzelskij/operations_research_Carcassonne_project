@@ -108,24 +108,6 @@ class CityUtil:
                         meeples[i].append(meeple_position)
 
         return meeples
-
-    # @classmethod
-    # def find_cities(cls, game_state: CarcassonneGameState, coordinate: Coordinate, sides: [Side] = (Side.TOP, Side.RIGHT, Side.BOTTOM, Side.LEFT)):
-    #     cities: Set[City] = set()
-
-    #     tile: Tile = game_state.board[coordinate.row][coordinate.column]
-
-    #     if tile is None:
-    #         return cities
-
-    #     side: Side
-    #     for side in sides:
-    #         if tile.get_type(side) == TerrainType.CITY:
-    #             city: City = cls.find_city(game_state=game_state,
-    #                                         city_position=CoordinateWithSide(coordinate=coordinate, side=side))
-    #             cities.add(city)
-
-    #     return list(cities)
     
     @classmethod
     def find_cities(cls, game_state: CarcassonneGameState, coordinate: Coordinate, sides: [Side] = (Side.TOP, Side.RIGHT, Side.BOTTOM, Side.LEFT)):
