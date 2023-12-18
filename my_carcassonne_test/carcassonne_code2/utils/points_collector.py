@@ -252,12 +252,10 @@ class PointsCollector:
                     farm: Farm = FarmUtil.find_farm_by_coordinate(game_state=game_state, position=meeple_position.coordinate_with_side)
                     meeples: [[MeeplePosition]] = FarmUtil.find_meeples(game_state=game_state, farm=farm)
                     meeple_counts_per_player = cls.get_meeple_counts_per_player(meeples)
-                    # print("Collecting points for farm. Meeples:", json.dumps(meeple_counts_per_player))
                     winning_players = cls.get_winning_player(meeple_counts_per_player)
                     if winning_players is not None:
                         points = cls.count_farm_points(game_state=game_state, farm=farm)
                         for winning_player in winning_players:
-                            # print(points, "points for player", int(winning_player))
                             game_state.scores[int(winning_player)] += points
                     MeepleUtil.remove_meeples(game_state=game_state, meeples=meeples)
                     continue
